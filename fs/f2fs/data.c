@@ -1442,6 +1442,7 @@ out:
 	}
 
 	unlock_page(page);
+<<<<<<< HEAD
 	f2fs_balance_fs(sbi, need_balance_fs);
 
 	if (unlikely(f2fs_cp_error(sbi))) {
@@ -1452,6 +1453,14 @@ out:
 	if (submitted)
 		*submitted = fio.submitted;
 
+=======
+	if (need_balance_fs)
+		f2fs_balance_fs(sbi);
+	if (wbc->for_reclaim) {
+		f2fs_submit_merged_bio(sbi, DATA, WRITE);
+		remove_dirty_dir_inode(inode);
+	}
+>>>>>>> 4c6c6cb... f2fs: fix to remove directory inode from dirty list
 	return 0;
 
 redirty_out:
