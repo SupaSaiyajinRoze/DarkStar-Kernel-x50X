@@ -60,3 +60,4 @@ ifneq ($(findstring india,$(TARGET_CARRIER)),)
 EXTRA_CFLAGS += -DLEECO_INDIA_CHARGE_LIMIT
 endif
 obj-$(CONFIG_POWER_RESET)	+= reset/
+obj-$(CONFIG_FORCE_FAST_CHARGE) += fastcharge.o
