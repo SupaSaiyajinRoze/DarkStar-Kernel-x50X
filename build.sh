@@ -44,7 +44,7 @@ export CROSS_COMPILE=/home/fester/aarch64-linux-android-4.9/bin/aarch64-linux-an
 export JOBS=16
 export SUBARCH=arm
 export KBUILD_BUILD_USER="DarkAbhi"
-export KBUILD_BUILD_HOST="Fester-Server"
+export KBUILD_BUILD_HOST="Rainbow-Server"
 
 
 #COMPILATION SCRIPTS
