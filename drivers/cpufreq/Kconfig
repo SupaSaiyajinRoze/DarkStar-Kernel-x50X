@@ -121,6 +121,12 @@ config CPU_FREQ_DEFAULT_GOV_THUNDERX
   help
 	Uses ThunderX as Yuor Default Governer
 
+config CPU_FREQ_DEFAULT_GOV_SMARTASS2
+        bool "smartass2"
+        select CPU_FREQ_GOV_SMARTASS2
+        help
+          Use the CPUFreq governor 'ThunderX' as default.
+
 config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	bool "interactive"
 	select CPU_FREQ_GOV_INTERACTIVE
@@ -296,6 +302,13 @@ config CPU_FREQ_GOV_THUNDERX
   depends on CPU_FREQ
   help
     'thunderx' - a "power optimized" governor for Mediatek SoCs
+
++config CPU_FREQ_GOV_SMARTASS2
+        tristate "'smartassV2' cpufreq governor"
+        depends on CPU_FREQ
+        help
+        'smartassV2' - a "smart" optimized governor!
+        If in doubt, say N.
 
 config CPU_FREQ_GOV_HOTPLUG
 	tristate "'hotplug' cpufreq policy governor"
