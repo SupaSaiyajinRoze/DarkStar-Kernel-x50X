@@ -5454,9 +5454,9 @@ void get_slabinfo(struct kmem_cache *s, struct slabinfo *sinfo)
 			continue;
 
 		nr_partials += n->nr_partial;
-		nr_slabs += atomic_long_read(&n->nr_slabs);
-		nr_objs += atomic_long_read(&n->total_objects);
-		nr_free += count_partial(n, count_free);
+		nr_slabs += node_nr_slabs(n);
+		nr_objs += node_nr_objs(n);
+                nr_free += count_partial(n, count_free);
 	}
 
 	sinfo->active_objs = nr_objs - nr_free;
