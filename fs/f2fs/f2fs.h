@@ -373,11 +373,8 @@ static inline bool __has_cursum_space(struct f2fs_journal *journal,
 #define F2FS_IOC_GARBAGE_COLLECT	_IO(F2FS_IOCTL_MAGIC, 6)
 #define F2FS_IOC_WRITE_CHECKPOINT	_IO(F2FS_IOCTL_MAGIC, 7)
 #define F2FS_IOC_DEFRAGMENT		_IO(F2FS_IOCTL_MAGIC, 8)
-<<<<<<< HEAD
 #define F2FS_IOC_MOVE_RANGE		_IOWR(F2FS_IOCTL_MAGIC, 9,	\
 						struct f2fs_move_range)
-=======
->>>>>>> d533c4d... f2fs: support file defragment
 
 #define F2FS_IOC_SET_ENCRYPTION_POLICY	FS_IOC_SET_ENCRYPTION_POLICY
 #define F2FS_IOC_GET_ENCRYPTION_POLICY	FS_IOC_GET_ENCRYPTION_POLICY
@@ -405,18 +402,6 @@ static inline bool __has_cursum_space(struct f2fs_journal *journal,
 struct f2fs_defragment {
 	u64 start;
 	u64 len;
-<<<<<<< HEAD
-=======
-};
-
-/*
- * For INODE and NODE manager
- */
-/* for directory operations */
-struct f2fs_str {
-	unsigned char *name;
-	u32 len;
->>>>>>> d533c4d... f2fs: support file defragment
 };
 
 struct f2fs_move_range {
@@ -1823,10 +1808,7 @@ enum {
 	FI_DATA_EXIST,		/* indicate data exists */
 	FI_INLINE_DOTS,		/* indicate inline dot dentries */
 	FI_DO_DEFRAG,		/* indicate defragment is running */
-<<<<<<< HEAD
 	FI_DIRTY_FILE,		/* indicate regular/symlink has dirty pages */
-=======
->>>>>>> d533c4d... f2fs: support file defragment
 };
 
 static inline void __mark_inode_dirty_flag(struct inode *inode,
@@ -2396,7 +2378,6 @@ void destroy_checkpoint_caches(void);
 /*
  * data.c
  */
-<<<<<<< HEAD
 void f2fs_submit_merged_bio(struct f2fs_sb_info *sbi, enum page_type type,
 			int rw);
 void f2fs_submit_merged_bio_cond(struct f2fs_sb_info *sbi,
@@ -2435,24 +2416,6 @@ int f2fs_release_page(struct page *page, gfp_t wait);
 int f2fs_migrate_page(struct address_space *mapping, struct page *newpage,
 			struct page *page, enum migrate_mode mode);
 #endif
-=======
-void f2fs_submit_merged_bio(struct f2fs_sb_info *, enum page_type, int);
-int f2fs_submit_page_bio(struct f2fs_io_info *);
-void f2fs_submit_page_mbio(struct f2fs_io_info *);
-void set_data_blkaddr(struct dnode_of_data *);
-int reserve_new_block(struct dnode_of_data *);
-int f2fs_get_block(struct dnode_of_data *, pgoff_t);
-int f2fs_reserve_block(struct dnode_of_data *, pgoff_t);
-struct page *get_read_data_page(struct inode *, pgoff_t, int, bool);
-struct page *find_data_page(struct inode *, pgoff_t);
-struct page *get_lock_data_page(struct inode *, pgoff_t, bool);
-struct page *get_new_data_page(struct inode *, struct page *, pgoff_t, bool);
-int do_write_data_page(struct f2fs_io_info *);
-int f2fs_map_blocks(struct inode *, struct f2fs_map_blocks *, int, int);
-int f2fs_fiemap(struct inode *inode, struct fiemap_extent_info *, u64, u64);
-void f2fs_invalidate_page(struct page *, unsigned long);
-int f2fs_release_page(struct page *, gfp_t);
->>>>>>> d533c4d... f2fs: support file defragment
 
 /*
  * gc.c

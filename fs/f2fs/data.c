@@ -1624,11 +1624,7 @@ static int f2fs_write_data_pages(struct address_space *mapping,
 		goto skip_write;
 
 	/* skip writing during file defragment */
-<<<<<<< HEAD
 	if (is_inode_flag_set(inode, FI_DO_DEFRAG))
-=======
-	if (is_inode_flag_set(F2FS_I(inode), FI_DO_DEFRAG))
->>>>>>> d533c4d... f2fs: support file defragment
 		goto skip_write;
 
 	/* during POR, we don't need to trigger writepage at all. */
