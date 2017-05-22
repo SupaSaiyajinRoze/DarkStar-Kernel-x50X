@@ -2566,13 +2566,8 @@ static inline struct f2fs_stat_info *F2FS_STAT(struct f2fs_sb_info *sbi)
 		si->bg_node_blks += (gc_type == BG_GC) ? (blks) : 0;	\
 	} while (0)
 
-<<<<<<< HEAD
 int f2fs_build_stats(struct f2fs_sb_info *sbi);
 void f2fs_destroy_stats(struct f2fs_sb_info *sbi);
-=======
-int f2fs_build_stats(struct f2fs_sb_info *);
-void f2fs_destroy_stats(struct f2fs_sb_info *);
->>>>>>> 3ab73f4... f2fs: report error of f2fs_create_root_stats
 int __init f2fs_create_root_stats(void);
 void f2fs_destroy_root_stats(void);
 #else
